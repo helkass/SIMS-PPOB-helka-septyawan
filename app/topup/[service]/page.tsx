@@ -1,22 +1,20 @@
-import React from "react";
-import MainLayout from "../../_components/MainLayout";
-import FormData from "./FormData";
+import MainLayout from "@/app/_components/MainLayout";
 import Header from "./Header";
+import FormData from "./FormData";
 
-interface ServicePageProps {
-  params: {
+interface PageProps {
+  params: Promise<{
     service: string;
-  };
+  }>;
 }
-const TopupService = ({ params }: ServicePageProps) => {
-  const { service } = params;
+
+export default async function TopupService({ params }: PageProps) {
+  const { service } = await params;
+
   return (
     <MainLayout header>
       <Header service={service} />
-
       <FormData service={service} />
     </MainLayout>
   );
-};
-
-export default TopupService;
+}

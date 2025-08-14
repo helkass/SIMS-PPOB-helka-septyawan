@@ -23,6 +23,7 @@ export async function GET(req: Request) {
     });
 
     return NextResponse.json(apiRes.data);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     return NextResponse.json(
       { error: error.response?.data || "Gagal mengambil profil" },
@@ -55,6 +56,7 @@ export async function PUT(req: Request) {
     });
 
     return NextResponse.json(apiRes.data);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     return NextResponse.json(
       { error: error.response?.data || "Gagal update profil" },

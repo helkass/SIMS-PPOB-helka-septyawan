@@ -24,6 +24,7 @@ export async function GET(req: Request) {
     });
 
     return NextResponse.json(apiRes.data);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     return NextResponse.json(
       { error: error.response?.data || "Gagal mengambil histori transaksi" },
@@ -56,6 +57,7 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json(apiRes.data);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     return NextResponse.json(
       { error: error.response?.data || "Gagal menambahkan data transaksi" },

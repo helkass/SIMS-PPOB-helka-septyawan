@@ -21,7 +21,7 @@ const Header = ({ service }: IHeader) => {
     service_icon: "",
   });
 
-  function fetchData() {
+  useEffect(() => {
     axios.get("/api/services").then((res) => {
       const services = res.data.data;
       const result = services.filter(
@@ -30,11 +30,7 @@ const Header = ({ service }: IHeader) => {
       )[0];
       setData(result);
     });
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  }, [service]);
 
   return (
     <div className="space-y-2">
