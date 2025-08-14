@@ -39,7 +39,7 @@ export const MenuFeatureLoader = () => {
 };
 
 function getThemeMenuFeature(theme: themeTypes) {
-  let result = {
+  const result = {
     color: "",
     background: "",
   };

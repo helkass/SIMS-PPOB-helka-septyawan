@@ -67,9 +67,9 @@ export default function UpdateProfile() {
     setLoading(true);
 
     // reset error message first
-    setIsEmailError((prev) => ({ error: false, message: "" }));
-    setIsFirstNameError((prev) => ({ error: false, message: "" }));
-    setIsLastNameError((prev) => ({ error: false, message: "" }));
+    setIsEmailError(() => ({ error: false, message: "" }));
+    setIsFirstNameError(() => ({ error: false, message: "" }));
+    setIsLastNameError(() => ({ error: false, message: "" }));
 
     axios
       .put("/api/profile", formData)
@@ -81,17 +81,17 @@ export default function UpdateProfile() {
         console.log(err);
         const errorMessage = err.response.data.message;
         if (errorMessage.toLowerCase().includes("email")) {
-          setIsEmailError((prev) => ({
+          setIsEmailError(() => ({
             error: true,
             message: errorMessage,
           }));
         } else if (errorMessage.toLowerCase().includes("username")) {
-          setIsFirstNameError((prev) => ({
+          setIsFirstNameError(() => ({
             error: true,
             message: errorMessage,
           }));
         } else if (errorMessage.toLowerCase().includes("last_name")) {
-          setIsLastNameError((prev) => ({
+          setIsLastNameError(() => ({
             error: true,
             message: errorMessage,
           }));

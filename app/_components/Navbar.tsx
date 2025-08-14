@@ -6,8 +6,6 @@ import React from "react";
 
 const Navbar = () => {
   const pathname = usePathname();
-
-  const isActive = pathname.startsWith("/topup");
   return (
     <header className="shadow z-100 fixed w-full top-0 bg-white">
       {/* logo icon */}

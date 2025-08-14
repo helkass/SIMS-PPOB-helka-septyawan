@@ -71,7 +71,7 @@ const FormData = ({ service }: IFormData) => {
         total_amount: Number(nominal.toString().replaceAll(".", "")),
         service_code: service.toString().toUpperCase(),
       })
-      .then((res) => {
+      .then(() => {
         setNominal("0");
         setValueAlert({
           Icon: FaCheck,
@@ -83,7 +83,7 @@ const FormData = ({ service }: IFormData) => {
           message: "berhasil",
         });
       })
-      .catch((err) => {
+      .catch(() => {
         setValueAlert({
           Icon: IoClose,
           theme: "primary",
